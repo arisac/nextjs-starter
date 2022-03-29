@@ -53,7 +53,7 @@ export function ThemeToggle(props) {
         </Listbox.Button>
         <Listbox.Options
           className={
-            'absolute z-10 overflow-auto rounded-lg border border-slate-200 bg-slate-50 p-1 dark:border-slate-800 dark:bg-slate-900 ' +
+            'absolute z-10 overflow-auto rounded-lg border border-slate-200/50 bg-slate-50/50 p-1 backdrop-blur dark:border-slate-800/50 dark:bg-slate-900/50 ' +
             menuPosition
           }
         >
