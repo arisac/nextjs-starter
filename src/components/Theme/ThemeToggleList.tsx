@@ -3,7 +3,7 @@ import { Fragment, useEffect, useState } from 'react'
 import { MoonIcon, SunIcon, DesktopComputerIcon } from '@heroicons/react/outline'
 import { useTheme } from 'next-themes'
 import { Listbox } from '@headlessui/react'
-import { usePopper } from 'utils/hooks/use-popper'
+import { usePopper } from 'hooks/use-popper'
 
 export default function ThemeToggleList(props) {
   const [mounted, setMounted] = useState(false)
