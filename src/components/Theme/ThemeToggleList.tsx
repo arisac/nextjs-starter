@@ -3,39 +3,43 @@ import { Fragment, useEffect, useState } from 'react'
 import { MoonIcon, SunIcon, DesktopComputerIcon } from '@heroicons/react/outline'
 import { useTheme } from 'next-themes'
 import { Listbox } from '@headlessui/react'
+import { usePopper } from 'utils/hooks/use-popper'
 
-let settings = [
-  {
-    value: 'light',
-    label: 'Light',
-    icon: SunIcon,
-  },
-  {
-    value: 'dark',
-    label: 'Dark',
-    icon: MoonIcon,
-  },
-  {
-    value: 'system',
-    label: 'System',
-    icon: DesktopComputerIcon,
-  },
-]
-
-export function ThemeToggle(props) {
+export default function ThemeToggleList(props) {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
+  const settings = [
+    {
+      value: 'light',
+      label: 'Light',
+      icon: SunIcon,
+    },
+    {
+      value: 'dark',
+      label: 'Dark',
+      icon: MoonIcon,
+    },
+    {
+      value: 'system',
+      label: 'System',
+      icon: DesktopComputerIcon,
+    },
+  ]
+
+  let [trigger, container] = usePopper({
+    strategy: 'fixed',
+    modifiers: [{ name: 'offset', options: { offset: [0, 10] } }],
+  })
+
   useEffect(() => setMounted(true), [])
   if (!mounted) return null
-
-  const menuPosition = props.menuPosition || 'left-0'
 
   return (
     <span className="relative">
       <Listbox value={theme} onChange={setTheme}>
         <Listbox.Label className="sr-only">Theme</Listbox.Label>
-        <Listbox.Button type="button">
+        <Listbox.Button type="button" ref={trigger}>
           <div className="group mx-1 rounded-full p-1 hover:bg-slate-200 dark:hover:bg-slate-800">
             <SunIcon
               className={
@@ -52,10 +56,8 @@ export function ThemeToggle(props) {
           </div>
         </Listbox.Button>
         <Listbox.Options
-          className={
-            'absolute z-10 overflow-auto rounded-lg border border-slate-200/50 bg-slate-50/50 p-1 backdrop-blur dark:border-slate-800/50 dark:bg-slate-900/50 ' +
-            menuPosition
-          }
+          className="absolute z-10 overflow-auto rounded-lg border border-slate-200/50 bg-slate-50/50 p-1 backdrop-blur dark:border-slate-800/50 dark:bg-slate-900/50"
+          ref={container}
         >
           {settings.map(({ value, label, icon: Icon }) => (
             <Listbox.Option key={value} value={value} as={Fragment}>
@@ -79,5 +81,3 @@ export function ThemeToggle(props) {
     </span>
   )
 }
-
-export default ThemeToggle

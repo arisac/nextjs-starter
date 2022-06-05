@@ -1,11 +1,9 @@
 import Head from 'next/head'
 import styles from 'styles/Home.module.scss'
-import ThemeToggleButton from 'components/Layout/ThemeToggleButton'
-import ThemeToggle from 'components/Layout/ThemeToggle'
+import ThemeToggleButton from 'components/Theme/ThemeToggleButton'
+import ThemeToggleList from 'components/Theme/ThemeToggleList'
 
-export default Home
-
-function Home() {
+export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
@@ -25,12 +23,15 @@ function Header() {
   return (
     <header className={styles.header}>
       <div>
-        <ThemeToggle />
+        <ThemeToggleList />
       </div>
-      header
-      <ThemeToggleButton />
-      <div>
-        <ThemeToggle menuPosition="right-0" />
+      <div className="flex items-center">
+        <ThemeToggleButton /> header <ThemeToggleList />
+      </div>
+
+      <div className="flex items-center">
+        <ThemeToggleButton />
+        <ThemeToggleList />
       </div>
     </header>
   )
@@ -51,5 +52,19 @@ function Main() {
 }
 
 function Footer() {
-  return <footer className={styles.footer}>footer</footer>
+  return (
+    <footer className={styles.footer}>
+      <div>
+        <ThemeToggleList />
+      </div>
+      <div className="flex items-center">
+        <ThemeToggleButton /> footer <ThemeToggleList />
+      </div>
+
+      <div className="flex items-center">
+        <ThemeToggleButton />
+        <ThemeToggleList />
+      </div>
+    </footer>
+  )
 }
