@@ -4,9 +4,7 @@ import { createPopper, Options } from '@popperjs/core'
 /**
  * Example implementation to use Popper: https://popper.js.org/
  */
-export function usePopper(
-  options?: Partial<Options>
-): [RefCallback<Element | null>, RefCallback<HTMLElement | null>] {
+export function usePopper(options?: Partial<Options>): [RefCallback<Element | null>, RefCallback<HTMLElement | null>] {
   let reference = useRef<Element>(null)
   let popper = useRef<HTMLElement>(null)
 
@@ -23,11 +21,11 @@ export function usePopper(
 
   return useMemo(
     () => [
-      (referenceDomNode) => {
+      referenceDomNode => {
         reference.current = referenceDomNode
         instantiatePopper()
       },
-      (popperDomNode) => {
+      popperDomNode => {
         popper.current = popperDomNode
         instantiatePopper()
       },
