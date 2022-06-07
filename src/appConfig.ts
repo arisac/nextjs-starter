@@ -1,4 +1,4 @@
-export const site: { [key: string]: string } = {
+export const app: { [key: string]: string } = {
   name: 'Nextjs Starter', // web app name
   title: 'Nextjs Starter Boilerplate', // website title
   description: 'Nextjs Starter Boilerplate by @arisac', // description of website

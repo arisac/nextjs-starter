@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { site } from 'siteConfig'
+import { app } from 'appConfig'
 
 export default function HeadGlobal() {
   return (
@@ -11,31 +11,31 @@ export default function HeadGlobal() {
         content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
       />
 
-      <meta name="apple-mobile-web-app-title" content={site.name} />
+      <meta name="apple-mobile-web-app-title" content={app.name} />
       <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="application-name" content={site.name} />
+      <meta name="application-name" content={app.name} />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
       <meta name="mobile-web-app-capable" content="yes" />
-      <meta name="theme-color" content={site.themeColor} />
+      <meta name="theme-color" content={app.themeColor} />
 
-      <link rel="apple-touch-icon" href={site.image} />
-      <link rel="icon" type="image/png" sizes="512x512" href={site.image} />
+      <link rel="apple-touch-icon" href={app.image} />
+      <link rel="icon" type="image/png" sizes="512x512" href={app.image} />
 
-      <link rel="icon" href={site.favicon} />
+      <link rel="icon" href={app.favicon} />
 
       {/* <link rel="manifest" href="/manifest.json" /> */}
 
       <meta property="og:type" content="website" />
-      <meta property="og:title" content={site.title} />
-      <meta property="og:description" content={site.description} />
-      <meta property="og:site_name" content={site.name} />
-      <meta property="og:url" content={site.url} />
-      <meta property="og:image" content={site.image} />
+      <meta property="og:title" content={app.title} />
+      <meta property="og:description" content={app.description} />
+      <meta property="og:site_name" content={app.name} />
+      <meta property="og:url" content={app.url} />
+      <meta property="og:image" content={app.image} />
 
-      <meta name="description" content={site.description} />
-      <meta name="keywords" content={site.keywords} />
-      <title>{site.title}</title>
+      <meta name="description" content={app.description} />
+      <meta name="keywords" content={app.keywords} />
+      <title>{app.title}</title>
     </Head>
   )
 }
