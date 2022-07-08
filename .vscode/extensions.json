@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "wix.vscode-import-cost",
+    "formulahendry.auto-close-tag",
+    "bradlc.vscode-tailwindcss"
+  ]
+}
