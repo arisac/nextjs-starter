@@ -12,6 +12,6 @@
   },
   "files.associations": {
     "*.css": "tailwindcss",
-    "*.scss": "tailwindcss"
+    "*.scss": "sass"
   }
 }
