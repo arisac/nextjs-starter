@@ -4,6 +4,7 @@
     "esbenp.prettier-vscode",
     "wix.vscode-import-cost",
     "formulahendry.auto-close-tag",
-    "bradlc.vscode-tailwindcss"
+    "bradlc.vscode-tailwindcss",
+    "csstools.postcss"
   ]
 }
