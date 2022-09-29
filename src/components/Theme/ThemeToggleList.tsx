@@ -5,7 +5,7 @@ import { useTheme } from 'next-themes'
 import { Listbox } from '@headlessui/react'
 import { usePopper } from 'hooks/use-popper'
 
-export default function ThemeToggleList() {
+export const ThemeToggleList = ({ noTabIndex = false }) => {
   const [mounted, setMounted] = useState(false)
   const { theme, setTheme } = useTheme()
 
@@ -42,7 +42,8 @@ export default function ThemeToggleList() {
         <Listbox.Button
           type="button"
           ref={trigger}
-          className="group rounded-full p-1 outline-none hover:bg-slate-200 dark:hover:bg-slate-800"
+          tabIndex={noTabIndex ? -1 : 0}
+          className="group rounded-full p-1 hover:bg-slate-200 dark:hover:bg-slate-800"
         >
           <SunIcon
             className={
@@ -57,8 +58,8 @@ export default function ThemeToggleList() {
             }
           />
         </Listbox.Button>
-        <Listbox.Options className="outline-none" as="div" ref={container}>
-          <ul className="m-1 rounded-lg border border-slate-200/50 bg-slate-50/50 p-1.5 backdrop-blur dark:border-slate-800/50 dark:bg-slate-900/50">
+        <Listbox.Options as="div" ref={container}>
+          <ul className=" m-1 rounded-lg border border-slate-200/50 bg-slate-50/50 p-1.5 backdrop-blur dark:border-slate-800/50 dark:bg-slate-900/50">
             {settings.map(({ value, label, icon: Icon }) => (
               <Listbox.Option key={value} value={value} as={Fragment}>
                 {({ active, selected }) => (
@@ -69,6 +70,7 @@ export default function ThemeToggleList() {
                       (selected && value === 'light' ? ' text-red-500' : '') +
                       (selected && value === 'dark' ? ' text-yellow-500' : '')
                     }
+                    tabIndex={0}
                   >
                     <Icon className="mr-2 h-6 w-6" />
                     {label}

@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { MoonIcon, SunIcon } from '@heroicons/react/solid'
 import { useTheme } from 'next-themes'
 
-export default function ThemeToggleButton() {
+export const ThemeToggleButton = ({ noTabIndex = false }) => {
   const [mounted, setMounted] = useState(false)
   const { resolvedTheme, setTheme } = useTheme()
 
@@ -13,6 +13,7 @@ export default function ThemeToggleButton() {
   return (
     <button
       className="group relative rounded-full p-1 text-slate-500 hover:bg-blue-800 dark:hover:bg-blue-200"
+      tabIndex={noTabIndex ? -1 : 0}
       onClick={e => {
         e.preventDefault()
         setTheme(resolvedTheme === 'light' ? 'dark' : 'light')
