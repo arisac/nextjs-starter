@@ -1,10 +1,12 @@
 import styles from 'styles/Home.module.scss'
 import ThemeToggleButton from 'components/Theme/ThemeToggleButton'
 import ThemeToggleList from 'components/Theme/ThemeToggleList'
+import { SkipLink } from 'components/Links'
 
 export default function Home() {
   return (
     <div className={styles.container}>
+      <SkipLink href="#main" text="Skip to main" />
       <Header />
       <Main />
       <Footer />
@@ -32,7 +34,8 @@ function Header() {
 
 function Main() {
   return (
-    <main className={styles.main}>
+    <main className={styles.main} id="main">
+      <SkipLink href="#footer" text="Skip to footer" />
       <article className="prose dark:prose-invert md:prose-lg lg:prose-xl">
         <h1>Heading 1</h1>
         <h2>Heading 2</h2>
@@ -46,7 +49,7 @@ function Main() {
 
 function Footer() {
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} id="footer">
       <div>
         <ThemeToggleList />
       </div>
