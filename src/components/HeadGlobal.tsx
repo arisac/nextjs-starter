@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import { app } from 'appConfig'
+import { useTheme } from 'next-themes'
 
 export default function HeadGlobal() {
+  const { resolvedTheme } = useTheme()
   return (
     <Head>
       <meta charSet="utf-8" />
@@ -17,7 +19,7 @@ export default function HeadGlobal() {
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
 
       <meta name="mobile-web-app-capable" content="yes" />
-      <meta name="theme-color" content={app.themeColor} />
+      <meta name="theme-color" content={resolvedTheme === 'dark' ? app.themeColorDark : app.themeColor} />
 
       <link rel="apple-touch-icon" href={app.image} />
       <link rel="icon" type="image/png" sizes="512x512" href={app.image} />

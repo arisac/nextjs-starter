@@ -1,7 +1,11 @@
 .container {
-  @apply flex flex-col;
+  @apply flex flex-col bg-white;
   min-height: 100vh;
   padding: 0 0.5rem;
+}
+
+:global(.dark) .container {
+  @apply bg-black;
 }
 
 .header {

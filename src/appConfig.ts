@@ -8,4 +8,5 @@ export const app: { [key: string]: string } = {
   favicon: '/favicon.ico', // favicon url
   twitter: '@arisdotac', // twitter account
   themeColor: '#FFFFFF', // theme color
+  themeColorDark: '#000000', // theme color dark
 }
