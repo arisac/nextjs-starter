@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-import { MoonIcon, SunIcon } from '@heroicons/react/solid'
+import { MoonIcon, SunIcon } from '@heroicons/react/24/solid'
 import { useTheme } from 'next-themes'
 
 export const ThemeToggleButton = ({ noTabIndex = false }) => {

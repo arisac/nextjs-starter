@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.3",
-    "@heroicons/react": "^1.0.5",
+    "@heroicons/react": "^2.0.12",
     "@popperjs/core": "^2.11.6",
     "@tailwindcss/typography": "^0.5.7",
     "autoprefixer": "^10.4.12",

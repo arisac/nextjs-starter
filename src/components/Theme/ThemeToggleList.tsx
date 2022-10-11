@@ -1,6 +1,6 @@
 import React from 'react'
 import { Fragment, useEffect, useState } from 'react'
-import { MoonIcon, SunIcon, DesktopComputerIcon } from '@heroicons/react/outline'
+import { MoonIcon, SunIcon, ComputerDesktopIcon } from '@heroicons/react/24/outline'
 import { useTheme } from 'next-themes'
 import { Listbox } from '@headlessui/react'
 import { usePopper } from 'hooks/use-popper'
@@ -23,7 +23,7 @@ export const ThemeToggleList = ({ noTabIndex = false }) => {
     {
       value: 'system',
       label: 'System',
-      icon: DesktopComputerIcon,
+      icon: ComputerDesktopIcon,
     },
   ]
 
